@@ -1,6 +1,6 @@
-import Nav from '../../components/nav';
-import Create from '../../components/create';
-import Table from '../../components/table';
+import Nav from '../../components/nav'
+import Create from '../../components/create'
+import Table from '../../components/table'
 
 function BucketPage() {
 	return (
@@ -17,7 +17,7 @@ function BucketPage() {
 				</div>
 			</main>
 		</div>
-	);
+	)
 }
 
-export default BucketPage;
+export default BucketPage
