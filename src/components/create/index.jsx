@@ -1,6 +1,5 @@
 import FilterOverlay from './FilterOverlay';
 import Suggestions from '../suggestion';
-
 import plusIcon from '../../assets/icons/plus-icon.png';
 
 function Create({ label, extra }) {

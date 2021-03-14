@@ -1,11 +1,12 @@
+import { StoreProvider } from 'easy-peasy'
+import store from '../store'
 import { Helmet } from 'react-helmet';
-
 // Router
 import AppRouter from './router';
 
 function App() {
 	return (
-		<div className='App'>
+		<StoreProvider store={store}>
 			<Helmet>
 				<link
 					href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,500&display=swap'
@@ -17,7 +18,7 @@ function App() {
 				/>
 			</Helmet>
 			<AppRouter />
-		</div>
+		</StoreProvider>
 	);
 }
 

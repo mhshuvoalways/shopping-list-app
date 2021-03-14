@@ -1,6 +1,6 @@
-import Nav from '../../components/nav';
-import Create from '../../components/create';
-import Table from '../../components/table';
+import Nav from '../../components/nav'
+import Create from '../../components/create'
+import Table from '../../components/table'
 
 function BucketPage() {
 	return (
@@ -17,7 +17,41 @@ function BucketPage() {
 				</div>
 			</main>
 		</div>
-	);
+	)
 }
 
-export default BucketPage;
+export default BucketPage
+
+
+
+// const buckets = [
+// 	{
+// 		name: 'bucket1',
+// 		cost: 434,
+// 		date: new Date(),
+// 		// items: [
+// 		// 	{
+// 		// 		id: 1,
+// 		// 		name: 'egg',
+// 		// 		price: 354,
+// 		// 		isCompact: false
+// 		// 	}
+// 		// ]
+// 		items: [1, 2]
+// 	}
+// ]
+
+// const items = [
+// 	{
+// 		id: 1,
+// 		name: 'egg',
+// 		price: 354,
+// 		isCompact: false
+// 	},
+// 	{
+// 		id: 2,
+// 		name: 'egg',
+// 		price: 354,
+// 		isCompact: false
+// 	}
+// ]
