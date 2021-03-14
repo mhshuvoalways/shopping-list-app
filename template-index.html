@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Template</title>
+		<link rel="stylesheet" href="./styles/reset.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/style-bem.css" />
+	</head>
+	<body>
+		<!-- Navigation Bar -->
+		<nav class="nav __shadow--lg">
+			<div class="container nav__container">
+				<div class="nav__brand">
+					<img
+						class="nav__brand-logo"
+						src="./assets/brand-logo/brand-logo.svg"
+						alt="Brand Logo"
+					/>
+					<h1 class="nav__brand-name">Stack Learner</h1>
+				</div>
+				<div class="nav__menu nav__menu--right">
+					<div class="nav__menu-items">
+						<img
+							class="nav__menu-icon"
+							src="./assets/icons/more-menu.png"
+							alt="More Menu"
+						/>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Main Page Content -->
+		<main class="container __margin--ylg">
+			<!-- Add New Bucket -->
+			<div class="section add-item __shadow--sm">
+				<div class="add-item__relative">
+					<div class="add-item__input">
+						<img
+							class="add-item__icon"
+							src="./assets/icons/plus-icon.png"
+							alt="Create New Bucket"
+						/>
+						<input
+							class="add-item__input-field"
+							type="text"
+							placeholder="Create New Bucket"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bucket List Table -->
+			<div class="section table __shadow--sm">
+				<table class="table__table">
+					<thead class="table__thead">
+						<tr>
+							<th>Bucket</th>
+							<th>Created</th>
+							<th>Costs</th>
+							<th class="align-right">Action</th>
+						</tr>
+					</thead>
+					<tbody class="table__tbody">
+						<tr>
+							<th>Holiday Shopping</th>
+							<th class="text-secondary">4 April 2020</th>
+							<th>4850 BDT</th>
+							<th class="align-right">
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/edit-icon.png"
+										alt="Edit"
+									/>
+								</button>
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/delete-icon.png"
+										alt="Edit"
+									/>
+								</button>
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/printer-icon.png"
+										alt="Edit"
+									/>
+								</button>
+							</th>
+						</tr>
+						<tr>
+							<th>Holiday Shopping</th>
+							<th class="text-secondary">4 April 2020</th>
+							<th>4850 BDT</th>
+							<th class="align-right">
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/edit-icon.png"
+										alt="Edit"
+									/>
+								</button>
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/delete-icon.png"
+										alt="Edit"
+									/>
+								</button>
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/printer-icon.png"
+										alt="Edit"
+									/>
+								</button>
+							</th>
+						</tr>
+						<tr>
+							<th>Holiday Shopping</th>
+							<th class="text-secondary">4 April 2020</th>
+							<th>4850 BDT</th>
+							<th class="align-right">
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/edit-icon.png"
+										alt="Edit"
+									/>
+								</button>
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/delete-icon.png"
+										alt="Edit"
+									/>
+								</button>
+								<button class="icon-button">
+									<img
+										class="icon-button__icon"
+										src="./assets/icons/printer-icon.png"
+										alt="Edit"
+									/>
+								</button>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+	</body>
+</html>

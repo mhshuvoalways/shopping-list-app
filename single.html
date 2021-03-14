@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping List</title>
+		<link rel="stylesheet" href="./styles/reset.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./styles/style.css" />
+	</head>
+	<body>
+		<!-- Main Navigation Bar -->
+		<nav id="top-nav">
+			<div id="nav-area">
+				<div id="brand-logo">
+					<img
+						src="./assets/brand-logo/brand-logo.svg"
+						alt="Shopping List"
+					/>
+				</div>
+				<div id="brand-name">
+					<h1>Stack Shopping List</h1>
+				</div>
+				<div id="nav-menu">
+					<img src="./assets/icons/more-menu.png" alt="" />
+				</div>
+			</div>
+		</nav>
+		<!-- Main Page Container and Application Context -->
+		<main class="container">
+			<!-- Add New Item | Input Element with ICON -->
+			<section id="add-item-container">
+				<div id="add-item-relative-container">
+					<!-- Add Item Input Field -->
+					<div id="add-item">
+						<div id="add-item-icon">
+							<img
+								src="./assets/icons/plus-icon.png"
+								alt="Create New Bucket"
+							/>
+						</div>
+						<div id="add-item-input">
+							<input
+								type="text"
+								placeholder="Create New Bucket"
+							/>
+						</div>
+					</div>
+					<!-- Suggestion Overlay when User Start Typing -->
+					<div id="suggestion-overlay" class="hide">
+						<ul>
+							<li>
+								<div>
+									<img
+										src="./assets/icons/plus-icon.png"
+										alt="Item"
+									/>
+									Egg
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="./assets/icons/plus-icon.png"
+										alt="Item"
+									/>
+									Banana
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="./assets/icons/plus-icon.png"
+										alt="Item"
+									/>
+									Battery
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="./assets/icons/plus-icon.png"
+										alt="Item"
+									/>
+									Milk Powder
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="./assets/icons/plus-icon.png"
+										alt="Item"
+									/>
+									Milk Powder
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="./assets/icons/plus-icon.png"
+										alt="Item"
+									/>
+									Milk Powder
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Suggested Chips -->
+				<div id="suggested-item-container">
+					<div class="suggested-item-btn">
+						<img
+							src="./assets/icons/left-arrow-icon.png"
+							alt="Previous"
+						/>
+					</div>
+					<div id="suggested-item-chips">
+						<div class="chip">Egg</div>
+						<div class="chip">Carrot</div>
+						<div class="chip">Banana</div>
+						<div class="chip">Apple</div>
+						<div class="chip">Coke</div>
+						<div class="chip">Water</div>
+						<div class="chip">Medicine</div>
+						<div class="chip">Milk</div>
+						<div class="chip">Apple</div>
+						<div class="chip">Coke</div>
+						<div class="chip">Water</div>
+						<div class="chip">Medicine</div>
+						<div class="chip">Apple</div>
+						<div class="chip">Coke</div>
+						<div class="chip">Water</div>
+						<div class="chip">Medicine</div>
+						<div class="chip">Milk</div>
+					</div>
+					<div class="suggested-item-btn suggested-btn-next">
+						<img
+							src="./assets/icons/right-arrow-icon.png"
+							alt="Next"
+						/>
+					</div>
+				</div>
+			</section>
+			<!-- Bucket Item Not Completed List Table | List of Selected Items -->
+			<section id="bucket-item-list">
+				<table id="bucket-item-list-table">
+					<thead>
+						<tr>
+							<th>Item Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th class="bucket-item-list-actions">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>
+								<div class="item-name-group">
+									<input type="checkbox" />
+									<label>Carrots</label>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-quantity">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										aria-placeholder="500G"
+										contenteditable
+										>2KG
+									</span>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-price">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										contenteditable
+									>
+										250
+									</span>
+									<span>BDT</span>
+								</div>
+							</th>
+							<th class="bucket-item-list-actions">
+								<button>
+									<img
+										src="./assets/icons/delete-icon.png"
+										alt="Delete"
+									/>
+								</button>
+							</th>
+						</tr>
+						<tr>
+							<th>
+								<div class="item-name-group">
+									<input type="checkbox" />
+									<label>Carrots</label>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-quantity">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										aria-placeholder="500G"
+										contenteditable
+										>2KG
+									</span>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-price">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										contenteditable
+									>
+										250
+									</span>
+									<span>BDT</span>
+								</div>
+							</th>
+							<th class="bucket-item-list-actions">
+								<button>
+									<img
+										src="./assets/icons/delete-icon.png"
+										alt="Delete"
+									/>
+								</button>
+							</th>
+						</tr>
+						<tr>
+							<th>
+								<div class="item-name-group">
+									<input type="checkbox" />
+									<label>Carrots</label>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-quantity">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										aria-placeholder="500G"
+										contenteditable
+										>2KG
+									</span>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-price">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										contenteditable
+									>
+										250
+									</span>
+									<span>BDT</span>
+								</div>
+							</th>
+							<th class="bucket-item-list-actions">
+								<button>
+									<img
+										src="./assets/icons/delete-icon.png"
+										alt="Delete"
+									/>
+								</button>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<!-- Completed Items Section -->
+			<section id="bucket-completed-item-list">
+				<table id="bucket-completed-item-list-table">
+					<thead>
+						<tr>
+							<th>Checked Items</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th class="bucket-completed-item-list-actions">
+								<button>
+									<img
+										src="./assets/icons/printer-white-icon2.png"
+										alt="Delete"
+									/>
+								</button>
+								<button>
+									<img
+										src="./assets/icons/down-arrow-white-icon.png"
+										alt="Delete"
+									/>
+								</button>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>
+								<div class="item-name-group">
+									<input type="checkbox" checked />
+									<label>Carrots</label>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-quantity">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										aria-placeholder="500G"
+										contenteditable
+										>2KG
+									</span>
+								</div>
+							</th>
+							<th>
+								<div class="item-input-price">
+									<span
+										class="auto-grow-input"
+										role="textbox"
+										contenteditable
+									>
+										250
+									</span>
+									<span>BDT</span>
+								</div>
+							</th>
+							<th class="bucket-completed-item-list-actions">
+								<button>
+									<img
+										src="./assets/icons/delete-icon.png"
+										alt="Delete"
+									/>
+								</button>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+				<section id="bucket-completed-item-list-table-footer">
+					<div>Total: 4599 BDT</div>
+				</section>
+			</section>
+		</main>
+	</body>
+</html>
