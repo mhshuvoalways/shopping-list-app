@@ -14,7 +14,7 @@ function NotFound() {
 							src={brandLogo}
 							alt='Brand Logo'
 						/>
-						<h1 className='nav__brand-name'>Stack Learner</h1>
+						<h1 className='nav__brand-name'>Shopping List App</h1>
 					</div>
 					<div className='nav__menu nav__menu--right'>
 						<div className='nav__menu-items'>
