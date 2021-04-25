@@ -1,31 +1,35 @@
-import FilterOverlay from './FilterOverlay';
+import SearchOverlay from './SearchOverlay';
 import Suggestions from '../suggestion';
-import plusIcon from '../../assets/icons/plus-icon.png';
+import { icons } from '../../assets'
 
-function Create({ label, extra }) {
+function Create({ value, placeholder, onChange, onkeyPress, searchOverlay, showSuggestions }) {
 	return (
-		<div className='section add-item __shadow--sm'>
+		<section className='section add-item __shadow--sm'>
 			<div className='add-item__relative'>
 				<div className='add-item__input'>
 					<img
 						className='add-item__icon'
-						src={plusIcon}
-						alt={label}
+						src={icons.plusIcon}
+						alt='create new bucket icon'
 					/>
 					<input
 						className='add-item__input-field'
 						type='text'
-						placeholder={label}
+						placeholder={placeholder}
+						value={value}
+						onChange={onChange}
+						onkeyPress={onkeyPress}
 					/>
 				</div>
 				{/* Filter Overlay */}
-				{extra && <FilterOverlay />}
+				{searchOverlay && <SearchOverlay />}
 			</div>
 			<div className='horizontal-line'></div>
 			{/* Suggestion Chips */}
-			{extra && <Suggestions />}
-		</div>
+			{showSuggestions && <Suggestions />}
+		</section>
 	);
 }
 
 export default Create;
+
