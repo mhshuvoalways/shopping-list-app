@@ -5,19 +5,13 @@ const suggestedItems = [
     'egg',
     'orange',
     'potato',
-    'carrots',
     'water',
     'cake',
     'burger',
     'pizza',
     'apple',
-    'medicine',
     'chocolate',
-    'biscuit',
-    'ice cream',
-    'tomato',
-    'orange',
-    'onion'
+    'biscuit'
 ];
 
 const generateSuggestions = () => {
@@ -43,13 +37,13 @@ const SuggestionModel = {
             state.items[payload.id].appeared++
             return
         }
+
         for (let i in state.items) {
             if (state.items[i].text === payload.text) {
                 state.items[i].appeared++;
                 return
             }
         }
-
         payload.id = shortid.generate()
         payload.text.toLowerCase()
         payload.appeared = 1

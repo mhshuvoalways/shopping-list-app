@@ -1,6 +1,7 @@
 import Nav from '../../components/nav';
 import Create from '../../components/create';
-import Table from '../../components/table';
+import ItemTable from '../../components/table/ItemTable';
+import CompletedTable from '../../components/table/CompletedTable';
 
 function BucketDetailPage() {
 	return (
@@ -13,11 +14,11 @@ function BucketDetailPage() {
 				<Create extra label='Add New Item' />
 				{/* Item Table */}
 				<section className='section table __shadow--sm'>
-					<Table />
+					<ItemTable />
 				</section>
 				{/* Item Table Completed */}
 				<section className='section table table--success __shadow--sm'>
-					<Table />
+					<CompletedTable />
 				</section>
 			</main>
 		</div>

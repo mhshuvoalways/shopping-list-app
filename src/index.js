@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/styles/reset.css';
 import './assets/styles/style.css';
+import './assets/styles/responsive.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from 'easy-peasy';

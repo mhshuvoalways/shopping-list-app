@@ -6,6 +6,7 @@ const ItemModel = {
         const item = {
             id: payload.id,
             name: payload.name,
+            bucketID: payload.bucketID,
             quantity: 0,
             price: 0,
             isCompleted: false

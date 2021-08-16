@@ -1,18 +1,20 @@
-# React-Poll-App
+# Shopping-list-app
 
-This is a project template for mern apps. It lives at https://react-poll-app-mhs.netlify.app
+This is a project template for mern apps. It lives at https://shopping-list-app-mhs.netlify.app
 
 ```bash
 Feature:
 • CRUD Bucket
 • CRUD Items
-• Suggesstions
+• Suggestions show according to use
+• More functionalities
 
 Technology:
 • HTML
 • CSS
-• reactjs
-• easy-peasy
+• BEM
+• Reactjs
+• Easy-peasy
 • Netlify
 ```
 

@@ -1,44 +1,52 @@
-import leftArrowIcon from '../../assets/icons/left-arrow-icon.png';
-import rightArrowIcon from '../../assets/icons/right-arrow-icon.png';
+import { useStoreState, useStoreActions } from "easy-peasy";
+import shortid from "shortid";
+import { useParams } from "@reach/router";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Suggestions() {
-	return (
-		<div className='add-item__suggestions'>
-			<div className='add-item__suggestion-control add-item__suggestion-control--prev'>
-				<img
-					className='add-item__suggestion-control-icon'
-					src={leftArrowIcon}
-					alt='Previous'
-				/>
-			</div>
-			<div className='add-item__suggestion-chips'>
-				<div className='add-item__suggestion-chip-item'>Egg</div>
-				<div className='add-item__suggestion-chip-item'>Carrot</div>
-				<div className='add-item__suggestion-chip-item'>Banana</div>
-				<div className='add-item__suggestion-chip-item'>Apple</div>
-				<div className='add-item__suggestion-chip-item'>Coke</div>
-				<div className='add-item__suggestion-chip-item'>Water</div>
-				<div className='add-item__suggestion-chip-item'>Medicine</div>
-				<div className='add-item__suggestion-chip-item'>Milk</div>
-				<div className='add-item__suggestion-chip-item'>Apple</div>
-				<div className='add-item__suggestion-chip-item'>Coke</div>
-				<div className='add-item__suggestion-chip-item'>Water</div>
-				<div className='add-item__suggestion-chip-item'>Medicine</div>
-				<div className='add-item__suggestion-chip-item'>Apple</div>
-				<div className='add-item__suggestion-chip-item'>Coke</div>
-				<div className='add-item__suggestion-chip-item'>Water</div>
-				<div className='add-item__suggestion-chip-item'>Medicine</div>
-				<div className='add-item__suggestion-chip-item'>Milk</div>
-			</div>
-			<div className='add-item__suggestion-control add-item__suggestion-control--next'>
-				<img
-					className='add-item__suggestion-control-icon'
-					src={rightArrowIcon}
-					alt='Next'
-				/>
-			</div>
-		</div>
-	);
+  const suggestionModel = useStoreState((state) =>
+    Object.values(state.suggestionModel.items)
+  );
+  const suggestionModelAction = useStoreActions(
+    (actions) => actions.suggestionModel
+  );
+  const createItem = useStoreActions((actions) => actions.itemModel.create);
+  const addItem = useStoreActions((actions) => actions.bucketModel.addItem);
+  const params = useParams();
+
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+  };
+
+  const suggestion = suggestionModel.sort((a, b) => {
+    return b.appeared - a.appeared;
+  });
+
+  return (
+    <Slider {...settings}>
+      {suggestion.map((item) => (
+        <div
+          className="add-item__suggestion-chip-item"
+          onClick={() => {
+            const id = shortid.generate();
+            createItem({
+              name: item.text,
+              id: id,
+              bucketID: params.bucketID,
+            });
+            addItem({ bucketID: params.bucketID, itemID: id });
+            suggestionModelAction.add({ id: item.id });
+          }}
+        >
+          {item.text}
+        </div>
+      ))}
+    </Slider>
+  );
 }
 
 export default Suggestions;

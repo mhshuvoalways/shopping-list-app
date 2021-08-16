@@ -1,6 +1,6 @@
 import Nav from '../../components/nav'
 import Create from '../../components/create'
-import Table from '../../components/table'
+import BucketTable from '../../components/table/BucketTable'
 
 function BucketPage() {
 	return (
@@ -13,7 +13,7 @@ function BucketPage() {
 				<Create label='Create New Bucket' />
 				{/* Buckets Table */}
 				<div className='section table __shadow--sm'>
-					<Table />
+					<BucketTable />
 				</div>
 			</main>
 		</div>
