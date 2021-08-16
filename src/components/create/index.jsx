@@ -7,12 +7,11 @@ import shortid from "shortid";
 import { useParams } from "@reach/router";
 
 function Create({ label, extra }) {
-  const createBucket = useStoreActions((actions) => actions.bucketModel.create);
+  const bucketModelAction = useStoreActions((actions) => actions.bucketModel);
   const suggestionModelAction = useStoreActions(
     (actions) => actions.suggestionModel
   );
   const createItem = useStoreActions((actions) => actions.itemModel.create);
-  const addItem = useStoreActions((actions) => actions.bucketModel.addItem);
   const params = useParams();
 
   return (
@@ -33,12 +32,12 @@ function Create({ label, extra }) {
                     id: id,
                     bucketID: params.bucketID,
                   });
-                  addItem({ bucketID: params.bucketID, itemID: id });
+                  bucketModelAction.addItem({ bucketID: params.bucketID, itemID: id });
                   suggestionModelAction.add({ text: e.target.value });
                   suggestionModelAction.changeSearchTerm("");
                   e.target.value = "";
                 } else {
-                  createBucket(e.target.value);
+                  bucketModelAction.create(e.target.value);
                   e.target.value = "";
                 }
               }

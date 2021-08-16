@@ -18,7 +18,6 @@ function ItemTable() {
   const bucketModel = useStoreState((state) =>
     Object.values(state.bucketModel.items)
   );
-
   const itemModel = useStoreState((state) =>
     Object.values(state.itemModel.items)
   );
@@ -26,14 +25,9 @@ function ItemTable() {
   const removeBucketItem = useStoreActions(
     (state) => state.bucketModel.removeItem
   );
-  const removeItem = useStoreActions((state) => state.itemModel.remove);
-  const updateItem = useStoreActions((state) => state.itemModel.update);
-  const toggleCompleted = useStoreActions(
-    (state) => state.itemModel.toggleCompleted
-  );
+  const itemModelAction = useStoreActions((state) => state.itemModel);
 
   const params = useParams();
-
   const items = itemModel.filter((item) => {
     return !item.isCompleted && item.bucketID === params.bucketID;
   });
@@ -65,7 +59,7 @@ function ItemTable() {
                     <label
                       onKeyPress={(event) => {
                         if (event.key === "Enter") {
-                          updateItem({
+                          itemModelAction.update({
                             itemID: item.id,
                             key: "name",
                             value: event.target.innerText,
@@ -95,7 +89,7 @@ function ItemTable() {
                     <label
                       onKeyPress={(event) => {
                         if (event.key === "Enter") {
-                          updateItem({
+                          itemModelAction.update({
                             itemID: item.id,
                             key: "quantity",
                             value: event.target.innerText,
@@ -124,7 +118,7 @@ function ItemTable() {
                     <label
                       onKeyPress={(event) => {
                         if (event.key === "Enter") {
-                          updateItem({
+                          itemModelAction.update({
                             itemID: item.id,
                             key: "price",
                             value: event.target.innerText,
@@ -148,7 +142,7 @@ function ItemTable() {
               <th className="align-right">
                 <button
                   onClick={() => {
-                    toggleCompleted(item.id);
+                    itemModelAction.toggleCompleted(item.id);
                   }}
                   className="icon-button"
                 >
@@ -164,7 +158,7 @@ function ItemTable() {
                       bucketID: params.bucketID,
                       itemID: item.id,
                     });
-                    removeItem(item.id);
+                    itemModelAction.remove(item.id);
                   }}
                   className="icon-button"
                 >

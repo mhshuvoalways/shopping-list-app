@@ -9,9 +9,7 @@ function Table() {
   const bucketModel = useStoreState((state) =>
     Object.values(state.bucketModel.items)
   );
-  const deleteBucket = useStoreActions((state) => state.bucketModel.remove);
-  const rename = useStoreActions((state) => state.bucketModel.rename);
-  const updateCost = useStoreActions((state) => state.bucketModel.updateCost);
+  const bucketModelAction = useStoreActions((state) => state.bucketModel);
 
   return (
     <table className="table__table">
@@ -35,7 +33,7 @@ function Table() {
                       className="table__bucket-name auto-grow-input"
                       onKeyPress={(e) => {
                         if (e.key === "Enter") {
-                          rename({
+                          bucketModelAction.rename({
                             bucketID: bucket.id,
                             name: e.target.innerText,
                           });
@@ -68,11 +66,11 @@ function Table() {
                         className="table__bucket-name auto-grow-input"
                         onKeyPress={(e) => {
                           if (e.key === "Enter") {
-                            updateCost({
+                            bucketModelAction.updateCost({
                               bucketID: bucket.id,
                               costs: e.target.innerText,
                             });
-                            setEditable({ isEdit: false});
+                            setEditable({ isEdit: false });
                           }
                         }}
                       >
@@ -99,7 +97,7 @@ function Table() {
                   />
                 </button>
                 <button
-                  onClick={() => deleteBucket(bucket.id)}
+                  onClick={() => bucketModelAction.remove(bucket.id)}
                   className="icon-button"
                 >
                   <img
