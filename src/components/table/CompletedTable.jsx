@@ -1,6 +1,9 @@
+import React, { useRef } from "react";
 import undoCompleteIcon from "../../assets/icons/undo-complete-icon.png";
+import PrinterIcon from "../../assets/icons/printer-icon.png";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { useParams } from "@reach/router";
+import ReactToPrint from "react-to-print";
 
 function CompletedTable() {
   const itemModel = useStoreState((state) =>
@@ -20,14 +23,33 @@ function CompletedTable() {
   let price = 0;
   items.map((item) => (price += Number(item.price)));
 
+  const componentRef = useRef();
+
+  const pageStyle = `{ size: 2.5in 4in}`;
+
   return (
-    <table className="table__table">
+    <table className="table__table" ref={componentRef}>
       <thead className="table__thead">
         <tr>
           <th>Completed Item</th>
           <th>Quantity</th>
           <th>Cost</th>
-          <th className="align-right">Actions</th>
+          <th className="align-right">
+            <ReactToPrint
+              pageStyle={pageStyle}
+              trigger={() => {
+                return (
+                  <img
+                    src={PrinterIcon}
+                    className="table__print-icon"
+                    alt=""
+                  />
+                );
+              }}
+              content={() => componentRef.current}
+            />
+            Actions
+          </th>
         </tr>
       </thead>
       {items.map((item) => {
