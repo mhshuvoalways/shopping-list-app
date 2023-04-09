@@ -1,6 +1,7 @@
 # Shopping-list-app
 
-This is a project template for mern apps. It lives at https://shopping-list-app-mhs.netlify.app
+This is a shopping list application inspired by google. <br/>
+It lives at https://shopmate-mhs.netlify.app
 
 ```bash
 Feature:
@@ -10,7 +11,6 @@ Feature:
 • More functionalities
 
 Technology:
-• HTML
 • CSS
 • BEM
 • Reactjs
