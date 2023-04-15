@@ -1,6 +1,6 @@
 # Shopping-list-app
 
-This is a shopping list application inspired by google. <br/>
+Shop Mate is a simple functional-based application where users can add, delete and update buckets and add a list of items under each bucket. This application inspired by google🥼 <br/>
 It lives at https://shopmate-mhs.netlify.app
 
 ```bash
